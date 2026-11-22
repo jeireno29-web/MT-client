@@ -1,31 +1,21 @@
 # MT Client
 
-Launcher Java multiplataforma escrito con Swing y Maven. La rama contiene el cliente web original y la base Java de escritorio.
+MT Client es un launcher de escritorio Java multiplataforma con una interfaz original en azul y negro. Su organización toma como referencia patrones comunes de launchers de Minecraft, sin copiar archivos, recursos gráficos ni código propietario de Feather Client.
 
 ## Compilar
 
-Requiere JDK 17 o superior:
+Requiere JDK 17 o superior y Maven:
 
 ```bash
 mvn clean package
 java -jar target/mt-client-0.1.0-SNAPSHOT.jar
 ```
 
-## Variables opcionales
+## Variables de entorno
 
-- `MT_CLIENT_AZURE_CLIENT_ID`: ID de la aplicación Azure utilizada para el flujo Microsoft Device Code.
-- `MT_CLIENT_JAVA_HOME`: directorio JDK/JRE que debe usar el launcher.
+- `MT_CLIENT_AZURE_CLIENT_ID`: ID de aplicación Azure para autenticación Microsoft.
+- `MT_CLIENT_JAVA_HOME`: instalación Java opcional para iniciar Minecraft.
 
-## Estado funcional
+## Estado
 
-La descarga y organización de versiones, librerías y assets está preparada. Antes de distribuir una versión pública se deben completar:
-
-1. Registro de una aplicación Microsoft pública.
-2. Flujo Xbox Live → XSTS → Minecraft Services.
-3. Validación de posesión de Minecraft.
-4. Selección de Java compatible con cada versión.
-5. Resolución completa de `arguments` y bibliotecas nativas.
-6. Instalación real de Fabric y mods.
-7. Empaquetado con jpackage para Windows, macOS y Linux.
-
-No publiques credenciales, secretos de Azure ni tokens dentro del repositorio.
+La interfaz incluye las secciones Jugar, Perfiles y Ajustes, con tema oscuro azul/negro. La descarga de dependencias, autenticación de Minecraft y ejecución aún requieren completar componentes indicados en el código antes de usarlo como launcher de producción. No publiques credenciales ni tokens en el repositorio.
