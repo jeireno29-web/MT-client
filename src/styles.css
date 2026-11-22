@@ -1,0 +1,30 @@
+:root {
+  font-family: Inter, system-ui, sans-serif;
+  color: #e9eef7;
+  background: #090d14;
+}
+
+* { box-sizing: border-box; }
+
+body { margin: 0; min-width: 320px; min-height: 100vh; }
+button { font: inherit; }
+
+.app-shell { display: grid; grid-template-columns: 220px 1fr; min-height: 100vh; }
+aside { padding: 28px 18px; background: #0d131d; border-right: 1px solid #1a2533; }
+aside h1 { margin: 0 8px 36px; font-size: 22px; letter-spacing: 2px; }
+aside h1 span { color: #53b8ff; }
+nav { display: grid; gap: 8px; }
+nav button { text-align: left; border: 0; color: #75839b; background: transparent; padding: 12px 14px; border-radius: 8px; }
+nav button.active { color: white; background: #172235; }
+
+.content { padding: 36px; }
+header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; }
+header small { color: #718096; }
+header h2 { margin: 4px 0 0; }
+.play { border: 0; border-radius: 9px; padding: 14px 34px; color: white; background: #2875c7; font-weight: 800; }
+.play:disabled { opacity: .45; }
+
+.profiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+.profile { display: grid; gap: 6px; text-align: left; color: #aab5c7; border: 1px solid #1b2635; border-radius: 12px; background: #101721; padding: 18px; cursor: pointer; }
+.profile span { font-size: 13px; }
+.profile.selected { border-color: #397dc1; background: #111f30; }
