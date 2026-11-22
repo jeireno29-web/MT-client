@@ -1,0 +1,11 @@
+{
+  "name": "mt-client",
+  "version": "1.0.0",
+  "description": "Modern Minecraft/Fabric launcher",
+  "main": "src/main.js",
+  "license": "MIT",
+  "scripts": {"start":"electron .","build":"electron-builder"},
+  "devDependencies":{"electron":"^33.2.1","electron-builder":"^25.1.8"},
+  "dependencies":{"adm-zip":"^0.5.16"},
+  "build":{"appId":"com.mtclient.launcher","productName":"MT Client","files":["src/**/*","package.json"],"win":{"target":"nsis"},"linux":{"target":"AppImage"}}
+}

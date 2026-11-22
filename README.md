@@ -19,3 +19,21 @@ java -jar target/mt-client-0.1.0-SNAPSHOT.jar
 ## Estado
 
 La interfaz incluye las secciones Jugar, Perfiles y Ajustes, con tema oscuro azul/negro. La descarga de dependencias, autenticación de Minecraft y ejecución aún requieren completar componentes indicados en el código antes de usarlo como launcher de producción. No publiques credenciales ni tokens en el repositorio.
+Lanzador de Minecraft moderno basado en Electron y preparado para Fabric.
+
+## Desarrollo
+
+```bash
+npm install
+npm start
+```
+
+## Compilación
+
+```bash
+npm run build
+```
+
+## Estado
+
+Incluye interfaz, navegación y perfiles locales. La autenticación Microsoft y el motor de lanzamiento requieren integración OAuth y las APIs oficiales.
