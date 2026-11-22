@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MT Client</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="logo">M</span><span>MT CLIENT</span></div>
+    <nav>
+      <button class="nav active" data-page="play">Jugar</button>
+      <button class="nav" data-page="mods">Mods</button>
+      <button class="nav" data-page="profiles">Perfiles</button>
+    </nav>
+  </aside>
+  <main>
+    <header><p id="status">Listo para jugar</p><button id="account" class="account">Iniciar sesión</button></header>
+    <section id="play" class="page active">
+      <div class="hero"><div><p class="eyebrow">Lanzador Minecraft</p><h1>Tu mundo,<br>tu versión.</h1><p>Fabric, perfiles y mods desde un solo lugar.</p><button id="playButton" class="primary">JUGAR</button></div></div>
+      <div class="cards"><article><span>VERSIÓN</span><strong>1.21.4 + Fabric</strong></article><article><span>MEMORIA</span><strong>4 GB</strong></article><article><span>MODS</span><strong>0 activos</strong></article></div>
+    </section>
+    <section id="mods" class="page"><h1>Mods</h1><div class="toolbar"><input placeholder="URL directa de .jar"><button>Añadir</button></div><p class="empty">No hay mods instalados.</p></section>
+    <section id="profiles" class="page"><h1>Perfiles</h1><div class="profile-card"><label>Nombre de perfil</label><input id="profileName" value="Fabric 1.21.4"><label>Memoria RAM (GB)</label><input id="ram" type="range" min="2" max="16" value="4"><output id="ramOutput">4 GB</output><button id="saveProfile">Guardar perfil</button></div></section>
+  </main>
+  <script src="renderer.js"></script>
+</body>
+</html>
