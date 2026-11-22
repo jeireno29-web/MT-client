@@ -1,25 +1,31 @@
 # MT Client
 
-MVP visual de un launcher moderno para Minecraft.
+Launcher Java multiplataforma escrito con Swing y Maven. La rama contiene el cliente web original y la base Java de escritorio.
 
-## Qué incluye
+## Compilar
 
-- Interfaz adaptable para escritorio y móvil
-- Selección de versión y cargador (Vanilla/Fabric)
-- Perfiles persistidos en `localStorage`
-- Ajustes de RAM y pantalla completa
-- Estados visuales de inicio y navegación
-
-## Ejecutar
-
-No requiere instalación ni dependencias:
+Requiere JDK 17 o superior:
 
 ```bash
-python3 -m http.server 8080
+mvn clean package
+java -jar target/mt-client-0.1.0-SNAPSHOT.jar
 ```
 
-Después abre `http://localhost:8080`.
+## Variables opcionales
 
-## Alcance actual
+- `MT_CLIENT_AZURE_CLIENT_ID`: ID de la aplicación Azure utilizada para el flujo Microsoft Device Code.
+- `MT_CLIENT_JAVA_HOME`: directorio JDK/JRE que debe usar el launcher.
 
-Esta versión es un prototipo web. No descarga Java, Minecraft, Fabric ni ejecuta procesos locales. Para convertirla en launcher real se necesita integración con el sistema operativo, una librería de autenticación Microsoft y una implementación de descarga y lanzamiento de instalaciones.
+## Estado funcional
+
+La descarga y organización de versiones, librerías y assets está preparada. Antes de distribuir una versión pública se deben completar:
+
+1. Registro de una aplicación Microsoft pública.
+2. Flujo Xbox Live → XSTS → Minecraft Services.
+3. Validación de posesión de Minecraft.
+4. Selección de Java compatible con cada versión.
+5. Resolución completa de `arguments` y bibliotecas nativas.
+6. Instalación real de Fabric y mods.
+7. Empaquetado con jpackage para Windows, macOS y Linux.
+
+No publiques credenciales, secretos de Azure ni tokens dentro del repositorio.
