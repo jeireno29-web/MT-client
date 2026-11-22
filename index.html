@@ -9,4 +9,112 @@
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0d1117">
+  <title>MT Client</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="launcher-shell">
+    <aside class="sidebar">
+      <div class="brand" aria-label="MT Client">
+        <span class="brand-mark">M</span>
+        <div><strong>MT</strong><small>CLIENT</small></div>
+      </div>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <button class="nav-item active" data-view="play" type="button" aria-current="page">
+          <span class="nav-icon">▶</span>Jugar
+        </button>
+        <button class="nav-item" data-view="profiles" type="button">
+          <span class="nav-icon">◫</span>Perfiles
+        </button>
+        <button class="nav-item" data-view="settings" type="button">
+          <span class="nav-icon">⚙</span>Ajustes
+        </button>
+      </nav>
+
+      <button class="account" id="accountButton" type="button">
+        <span class="avatar">J</span>
+        <span><strong id="accountName">Jugador</strong><small>Offline</small></span>
+        <span class="chevron">›</span>
+      </button>
+    </aside>
+
+    <section class="content">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Minecraft launcher</p>
+          <h1 id="pageTitle">Jugar</h1>
+        </div>
+        <button class="icon-button" id="refreshButton" type="button" aria-label="Actualizar">↻</button>
+      </header>
+
+      <div class="view active" id="playView">
+        <article class="hero-card">
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <span class="status-pill"><i></i> Listo para jugar</span>
+            <h2 id="heroVersion">Minecraft 1.21.1</h2>
+            <p id="heroLoader">Vanilla · Perfil principal</p>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="cube cube-a"></div>
+            <div class="cube cube-b"></div>
+            <div class="cube cube-c"></div>
+          </div>
+        </article>
+
+        <section class="panel">
+          <div class="panel-heading">
+            <div><p class="eyebrow">Selección</p><h3>Instancia</h3></div>
+            <button class="text-button" id="newProfileButton" type="button">+ Nuevo perfil</button>
+          </div>
+          <label class="field">
+            <span>Versión</span>
+            <select id="versionSelect">
+              <option value="1.21.1">Minecraft 1.21.1</option>
+              <option value="1.20.6">Minecraft 1.20.6</option>
+              <option value="1.20.1">Minecraft 1.20.1</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>Cargador</span>
+            <select id="loaderSelect">
+              <option value="Vanilla">Vanilla</option>
+              <option value="Fabric">Fabric</option>
+            </select>
+          </label>
+          <button class="play-button" id="playButton" type="button">
+            <span>JUGAR</span><small id="playMeta">1.21.1 · Vanilla</small>
+          </button>
+        </section>
+
+        <div class="notice" id="notice" role="status" aria-live="polite" hidden></div>
+      </div>
+
+      <div class="view" id="profilesView">
+        <section class="panel wide-panel">
+          <div class="panel-heading">
+            <div><p class="eyebrow">Tus instalaciones</p><h3>Perfiles</h3></div>
+          </div>
+          <div class="profile-list" id="profileList"></div>
+        </section>
+      </div>
+
+      <div class="view" id="settingsView">
+        <section class="panel wide-panel">
+          <div class="panel-heading"><div><p class="eyebrow">Configuración</p><h3>Ajustes</h3></div></div>
+          <label class="toggle-row"><span><strong>Pantalla completa</strong><small>Iniciar Minecraft en modo pantalla completa</small></span><input id="fullscreenToggle" type="checkbox"></label>
+          <label class="toggle-row"><span><strong>Mantener el launcher abierto</strong><small>Continuar ejecutándose tras lanzar el juego</small></span><input id="stayOpenToggle" type="checkbox" checked></label>
+          <label class="field"><span>RAM asignada (GB)</span><input id="ramInput" type="range" min="2" max="12" value="4"><output id="ramOutput">4 GB</output></label>
+        </section>
+      </div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
 </html>

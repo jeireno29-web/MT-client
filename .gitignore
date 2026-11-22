@@ -3,3 +3,9 @@ dist/
 target/
 *.log
 .env
+build/
+.env
+*.log
+*.dmg
+*.exe
+*.AppImage
